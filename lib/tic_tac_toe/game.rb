@@ -24,7 +24,6 @@ class Game
   end
 
   def player_win
-    puts "#{actual_player.name}: #{actual_player.positions}"
     if COMBINATIONS.include?(actual_player.positions)
       print_table
       p "#{actual_player.name} Wins"
@@ -64,7 +63,9 @@ class Game
 
   def run_game
     loop do
-      draw? ? break : "Jogador Atual: #{actual_player.name}"
+      break if draw?
+
+      puts "Jogador Atual: #{actual_player.name}"
 
       print_table
 
