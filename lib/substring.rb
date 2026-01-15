@@ -1,18 +1,15 @@
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner", "sit"]
+dictionary = %w[below down go going horn how howdy it i low own part partner sit]
 
 def substrings(words, dictionary)
-  wordsArray = words.downcase.split(' ')
+  wordsArray = words.downcase.split
   wordsCount = []
   dictionary.each do |word|
     wordsArray.each do |wordL|
-      if wordL.include?(word)
-        wordsCount.push(word)
-      end
+      wordsCount.push(word) if wordL.include?(word)
     end
   end
-  result = wordsCount.reduce(Hash.new(0)) do |word, count|
+  result = wordsCount.each_with_object(Hash.new(0)) do |count, word|
     word[count] += 1
-    word
   end
 
   puts result
@@ -20,7 +17,7 @@ end
 
 substrings("Howdy partner, sit down! How's it going?", dictionary)
 
-#solucão melhorada pelo gpt
+# solucão melhorada pelo gpt
 # def substrings(text, dictionary)
 #   words = text.downcase.scan(/\w+/)
 

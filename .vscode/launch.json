@@ -10,7 +10,8 @@
             "request": "launch",
             "script": "${file}",
             "args": [],
-            "askParameters": true
+            "console": "integratedTerminal",
+            "askParameters": true,
         },
         {
             "type": "rdbg",
