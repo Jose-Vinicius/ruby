@@ -16,4 +16,4 @@ def merge(left, right)
   result + left + right
 end
 
-p merge_sort([3, 2, 1, 4, 1, 6])
+p merge_sort([3, 2, 1, 5, 1, 6])
